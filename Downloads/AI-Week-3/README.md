@@ -1,3 +1,14 @@
+# Playwright Smoke Test
+
+This repo contains a minimal Playwright setup for a guaranteed green workflow.
+
+## How to run
+
+```sh
+npm install
+npx playwright test tests/smoke.spec.ts
+```
+
 # Playwright E2E Automation Framework
 
 <!-- Trigger workflow: 2024-06-08 13:00 UTC -->

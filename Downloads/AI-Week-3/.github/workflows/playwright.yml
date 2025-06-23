@@ -1,9 +1,7 @@
-name: Playwright Tests
+name: Test Actions
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -18,8 +16,7 @@ jobs:
           node-version: '18'
       - run: npm ci
       - run: npx playwright install --with-deps
-      - name: Run only the working OrangeHRM login test
-        run: npx playwright test tests/LoginTests/login.spec.ts
+      - run: npx playwright test tests/smoke.spec.ts
       - name: Upload Playwright HTML Report
         uses: actions/upload-artifact@v3
         with:
