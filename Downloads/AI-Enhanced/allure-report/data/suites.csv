@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7","Generate random email and password","","Mon Jun 23 15:29:36 IST 2025","passed","Mon Jun 23 15:29:36 IST 2025","Playwright Demo ToDo App","e2e_todo_demo.spec.ts","",""
+"","1116","Add and toggle a todo with random string","","Mon Jun 23 15:29:35 IST 2025","passed","Mon Jun 23 15:29:36 IST 2025","Playwright Demo ToDo App","e2e_todo_demo.spec.ts","",""

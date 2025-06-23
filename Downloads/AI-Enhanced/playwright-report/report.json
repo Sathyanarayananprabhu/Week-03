@@ -26,6 +26,10 @@
         {
           "outputFile": "playwright-report/report.json"
         }
+      ],
+      [
+        "C:\\Users\\sathyanarayanan\\Downloads\\AI-Enhanced\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        null
       ]
     ],
     "reportSlowTests": {
@@ -88,11 +92,11 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1094,
+                      "duration": 1257,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Adding todo: z72EVGL76z5oKWX\n"
+                          "text": "Adding todo: 9TqOotQUjGNsSkM\n"
                         },
                         {
                           "text": "Todo added and verified.\n"
@@ -103,7 +107,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T09:33:56.588Z",
+                      "startTime": "2025-06-23T10:02:37.091Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -136,15 +140,15 @@
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Random email: Ruthie_Collier@yahoo.com\n"
+                          "text": "Random email: Forrest_Schmidt22@hotmail.com\n"
                         },
                         {
-                          "text": "Random password: F1kddqJFgYb6awq\n"
+                          "text": "Random password: yjMFPLWgcI00nmY\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T09:33:57.847Z",
+                      "startTime": "2025-06-23T10:02:38.471Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -164,8 +168,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-23T09:33:54.724Z",
-    "duration": 3273.848,
+    "startTime": "2025-06-23T10:02:35.074Z",
+    "duration": 3565.621,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
