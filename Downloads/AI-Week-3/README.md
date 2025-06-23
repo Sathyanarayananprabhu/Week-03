@@ -1,10 +1,6 @@
 # Playwright E2E Automation Framework
 
-<!-- Trigger workflow again: 2024-06-08 12:00 UTC -->
-
-<!-- Trigger workflow again -->
-
-<!-- Trigger workflow -->
+<!-- Trigger workflow: 2024-06-08 13:00 UTC -->
 
 This repository contains an advanced Playwright automation framework using the Page Object Model (POM) design pattern, Allure reporting, and robust demo login tests against the OrangeHRM demo site.
 
