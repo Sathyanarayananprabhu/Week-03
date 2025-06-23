@@ -92,11 +92,11 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4085,
+                      "duration": 4359,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Adding todo: ldFr9cBvt5hIOk5\n"
+                          "text": "Adding todo: 8EfuTZQCerfpEAW\n"
                         },
                         {
                           "text": "Todo added and verified.\n"
@@ -107,7 +107,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T10:13:06.396Z",
+                      "startTime": "2025-06-23T10:41:21.997Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -136,19 +136,19 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11,
+                      "duration": 7,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Random email: Cornelius_Stroman@yahoo.com\n"
+                          "text": "Random email: Deven.Littel@hotmail.com\n"
                         },
                         {
-                          "text": "Random password: UPKgvfMP4t6Pt2C\n"
+                          "text": "Random password: CZR5SdlSmxQaj7b\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T10:13:10.714Z",
+                      "startTime": "2025-06-23T10:41:26.504Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -168,8 +168,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-23T10:13:04.117Z",
-    "duration": 6800.937,
+    "startTime": "2025-06-23T10:41:20.328Z",
+    "duration": 6323.996,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
