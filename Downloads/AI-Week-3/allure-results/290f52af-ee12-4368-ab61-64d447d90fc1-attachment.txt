@@ -1,0 +1,3 @@
+[INFO] Navigating to login page
+[INFO] Attempting login with invalid credentials
+[INFO] Error message displayed as expected

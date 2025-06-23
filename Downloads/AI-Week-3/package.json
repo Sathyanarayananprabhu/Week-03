@@ -1,0 +1,20 @@
+{
+  "name": "playwrightcursor_project",
+  "version": "1.0.0",
+  "description": "Sample Playwright automation framework with POM and reporting",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "show-report": "npx playwright show-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.43.1",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "allure-playwright": "^3.3.0"
+  }
+}
