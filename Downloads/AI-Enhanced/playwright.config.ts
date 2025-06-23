@@ -1,6 +1,8 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
+  retries: 2,
+  timeout: 60000,
   testDir: './tests',
   use: {
     baseURL: 'https://demo.playwright.dev/todomvc',

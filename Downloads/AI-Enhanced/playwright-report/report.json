@@ -37,7 +37,7 @@
       {
         "outputDir": "C:/Users/sathyanarayanan/Downloads/AI-Enhanced/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 2,
         "metadata": {
           "actualWorkers": 1
         },
@@ -48,7 +48,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 60000
       }
     ],
     "shard": null,
@@ -78,7 +78,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "",
@@ -88,11 +88,11 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1366,
+                      "duration": 1094,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Adding todo: 9DGJNBdRfIjd3NL\n"
+                          "text": "Adding todo: z72EVGL76z5oKWX\n"
                         },
                         {
                           "text": "Todo added and verified.\n"
@@ -103,7 +103,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T09:20:02.668Z",
+                      "startTime": "2025-06-23T09:33:56.588Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -122,7 +122,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "",
@@ -132,19 +132,19 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16,
+                      "duration": 7,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Random email: Blanche_Mraz5@hotmail.com\n"
+                          "text": "Random email: Ruthie_Collier@yahoo.com\n"
                         },
                         {
-                          "text": "Random password: P1cKxx68inkXZiL\n"
+                          "text": "Random password: F1kddqJFgYb6awq\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T09:20:04.228Z",
+                      "startTime": "2025-06-23T09:33:57.847Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -164,8 +164,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-23T09:20:00.046Z",
-    "duration": 4432.467000000001,
+    "startTime": "2025-06-23T09:33:54.724Z",
+    "duration": 3273.848,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
