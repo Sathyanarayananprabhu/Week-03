@@ -92,11 +92,11 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4359,
+                      "duration": 4273,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Adding todo: 8EfuTZQCerfpEAW\n"
+                          "text": "Adding todo: 3zVJhiSXpEPa84n\n"
                         },
                         {
                           "text": "Todo added and verified.\n"
@@ -107,7 +107,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T10:41:21.997Z",
+                      "startTime": "2025-06-23T11:02:42.371Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -140,15 +140,15 @@
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Random email: Deven.Littel@hotmail.com\n"
+                          "text": "Random email: Marcos_Baumbach@yahoo.com\n"
                         },
                         {
-                          "text": "Random password: CZR5SdlSmxQaj7b\n"
+                          "text": "Random password: 8xcQEhynsFDu0zl\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-06-23T10:41:26.504Z",
+                      "startTime": "2025-06-23T11:02:46.764Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -168,8 +168,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-23T10:41:20.328Z",
-    "duration": 6323.996,
+    "startTime": "2025-06-23T11:02:40.854Z",
+    "duration": 6042.29,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
