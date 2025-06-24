@@ -13,6 +13,8 @@ jobs:
         run: npx playwright test
       - name: Generate Playwright HTML report
         run: npx playwright show-report --output=playwright-report
+      - name: Zip Playwright HTML report
+        run: zip -r playwright-report.zip playwright-report
       - name: Send email with report
         uses: dawidd6/action-send-mail@v3
         with:
@@ -28,8 +30,8 @@ jobs:
 
             The Playwright CI/CD run has completed with status: ${{ job.status }}.
 
-            Please find the attached Playwright test report.
+            Please find the attached Playwright test report (unzip and open index.html).
 
             Regards,
             CI/CD
-          attachments: playwright-report/index.html 
+          attachments: playwright-report.zip 
