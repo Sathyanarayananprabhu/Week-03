@@ -1,0 +1,21 @@
+name: Email Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send_test_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send test email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: GitHub Actions Test Email
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: |
+            This is a test email sent from GitHub Actions to verify your email configuration. 
