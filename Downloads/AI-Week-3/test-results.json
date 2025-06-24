@@ -1,0 +1,15 @@
+{
+  "suites": [
+    {
+      "specs": [
+        {
+          "tests": [
+            { "status": "passed" },
+            { "status": "failed" },
+            { "status": "passed" }
+          ]
+        }
+      ]
+    }
+  ]
+} 
