@@ -91,8 +91,8 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: Playwright Test Results
-          to: ${{ secrets.MAIL_TO }}
-          from: ${{ secrets.MAIL_FROM }}
+          to: sathyanarayanan.prabhu@ideas2it.com
+          from: sathyanarayanan.prabhu@ideas2it.com
           body: |
             Hi Sathyanarayanan,
 
