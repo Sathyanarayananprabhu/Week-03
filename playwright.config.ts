@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './tests',
   reporter: [
     ['html'],
-    ['allure-playwright']
+    ['json', { outputFile: 'test-results.json' }]
   ],
   use: {
     headless: true,
