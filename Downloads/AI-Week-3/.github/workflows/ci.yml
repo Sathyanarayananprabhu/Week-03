@@ -25,7 +25,7 @@ jobs:
         run: npx playwright install --with-deps
   
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --reporter=html,json=test-results.json
 
       - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v4
@@ -60,7 +60,14 @@ jobs:
         run: |
           node <<'EOF'
           const fs = require('fs');
-          const report = JSON.parse(fs.readFileSync('test-results.json', 'utf8'));
+          const path = 'test-results.json';
+          if (!fs.existsSync(path)) {
+            console.log('::set-output name=total::N/A');
+            console.log('::set-output name=passed::N/A');
+            console.log('::set-output name=failed::N/A');
+            process.exit(0);
+          }
+          const report = JSON.parse(fs.readFileSync(path, 'utf8'));
           let total = 0, passed = 0, failed = 0;
           for (const suite of report.suites || []) {
             for (const test of suite.specs || []) {
