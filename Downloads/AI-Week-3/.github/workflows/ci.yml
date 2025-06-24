@@ -1,19 +1,35 @@
-name: Ai-enhanced task
+name: Playwright Tests
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Playwright tests
+        run: npx playwright test
+      - name: Generate Playwright HTML report
+        run: npx playwright show-report --output=playwright-report
+      - name: Send email with report
+        uses: dawidd6/action-send-mail@v3
         with:
-          node-version: '18'
-      - run: npm ci
-      - run: npx playwright install --with-deps
-      - run: npx playwright test tests/smoke.spec.ts 
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Playwright Test Report - ${{ job.status }}
+          to: sathyanarayanan.prabhu@ideas2it.com
+          from: Playwright CI <${{ secrets.EMAIL_USERNAME }}>
+          body: |
+            Hi Sathyanarayanan,
+
+            The Playwright CI/CD run has completed with status: ${{ job.status }}.
+
+            Please find the attached Playwright test report.
+
+            Regards,
+            CI/CD
+          attachments: playwright-report/index.html 
