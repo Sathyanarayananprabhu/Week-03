@@ -21,6 +21,7 @@ jobs:
           name: playwright-report
           path: playwright-report.zip
       - name: Send email with report
+        if: always()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
