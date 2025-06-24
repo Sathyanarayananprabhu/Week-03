@@ -1,0 +1,54 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+
+# Test
+coverage/
+
+# Environment
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Misc
+*.tgz
+.idea/
+*.swp
+
+# Playwright
+playwright-report/
+
+# Artifacts
+*.zip
+*.tar.gz
+
+# Ignore system/user folders accidentally added
+AppData/
+Desktop/
+Documents/
+Downloads/
+Music/
+Pictures/
+Videos/
+Saved Games/
+Contacts/
+Favorites/
+Links/
+OneDrive/
+Searches/ 

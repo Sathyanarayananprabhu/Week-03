@@ -1,0 +1,113 @@
+name: Playwright CI
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 */8 * * *' # Runs every 8 hours
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+  
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=html,json=test-results.json
+
+      - name: Upload Playwright HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: playwright-report/
+
+      - name: Upload Playwright JSON report
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-json-report
+          path: test-results.json
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate PDF report from Playwright HTML report
+        run: |
+          node <<'EOF'
+          const puppeteer = require('puppeteer');
+          (async () => {
+            const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+            const page = await browser.newPage();
+            await page.goto('file://' + process.cwd() + '/playwright-report/index.html', { waitUntil: 'networkidle0' });
+            await page.pdf({ path: 'playwright-report.pdf', format: 'A4', printBackground: true });
+            await browser.close();
+          })();
+          EOF
+
+      - name: Generate test summary JSON
+        id: summary
+        run: |
+          node <<'EOF'
+          const fs = require('fs');
+          const path = 'test-results.json';
+          if (!fs.existsSync(path)) {
+            console.log('::set-output name=total::N/A');
+            console.log('::set-output name=passed::N/A');
+            console.log('::set-output name=failed::N/A');
+            process.exit(0);
+          }
+          const report = JSON.parse(fs.readFileSync(path, 'utf8'));
+          let total = 0, passed = 0, failed = 0;
+          for (const suite of report.suites || []) {
+            for (const test of suite.specs || []) {
+              for (const result of test.tests || []) {
+                total++;
+                if (result.status === 'passed') passed++;
+                if (result.status === 'failed') failed++;
+              }
+            }
+          }
+          console.log(`::set-output name=total::${total}`);
+          console.log(`::set-output name=passed::${passed}`);
+          console.log(`::set-output name=failed::${failed}`);
+          EOF
+
+      - name: Send test result email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Playwright Test Results
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: |
+            Hi Sathyanarayanan,
+
+            The Playwright CI/CD run has completed.
+
+            Test Summary:
+            - Total: ${{ steps.summary.outputs.total }}
+            - Passed: ${{ steps.summary.outputs.passed }}
+            - Failed: ${{ steps.summary.outputs.failed }}
+
+            Please find the attached Playwright PDF test report for full details.
+
+            Regards,
+            CI/CD
+          attachments: |
+            playwright-report.pdf
+        # Make sure to set the required secrets in your repository:
+        # MAIL_USERNAME, MAIL_PASSWORD, MAIL_TO, MAIL_FROM 

@@ -1,0 +1,2 @@
+[INFO] Navigating to login page
+[INFO] Logging in with valid credentials
