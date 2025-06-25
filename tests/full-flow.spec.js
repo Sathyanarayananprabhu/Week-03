@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const LoginPage = require('../Week-3/pages/LoginPage');
-const DashboardPage = require('../Week-3/pages/DashboardPage');
+const LoginPage = require('../Week-3/pages/LoginPage.js');
+const DashboardPage = require('../Week-3/pages/DashboardPage.js');
 
 test('E2E: login, check inventory, logout', async ({ page }) => {
   const loginPage = new LoginPage(page);
